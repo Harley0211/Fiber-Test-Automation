@@ -26,5 +26,24 @@ export class CheckAddressPage {
     });
   }
 
-  async goto() {}
+  async goto() {
+    await this.page.goto("https://qlab02.fiber.t-mobile.com/check-address");
+  }
+  async searchAddress(address) {
+    await this.addressInput.fill(address);
+  }
+
+  async selectFirstAddressSuggestion() {
+    await expect(this.addressSuggestionDropdown).toBeVisible();
+
+    await this.addressSuggestions.first().click();
+  }
+
+  async selectFirstUnit() {
+    await this.unitDropdown.click();
+
+    await expect(this.unitListBox).toBeVisible();
+
+    await this.unitOption.first().click();
+  }
 }
