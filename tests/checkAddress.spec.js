@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { CheckAddressPage } from "../pages/CheckAddressPage";
+import { checkAddress, CheckAddressPage } from "../pages/CheckAddressPage";
 
-test("User can complete address flow", async ({ page }) => {});
+test("User can complete address flow", async ({ page }) => {
+  await checkAddress();
+});
