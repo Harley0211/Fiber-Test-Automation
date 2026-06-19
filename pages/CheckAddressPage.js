@@ -1,13 +1,42 @@
-export async function checkAddress(name) {
-  await page.goto("https://qlab02.fiber.t-mobile.com/check-address");
+import { CheckAddressLocators } from "../locators/checkAddress.locators";
 
-  await page.locator("#address").fill("61 delancey");
+export class CheckAddressPage {
+  constructor(page) {
+    this.page = page;
+  }
 
-  await page.locator("option").first().click();
+  async navigate() {
+    await this.page.goto(
+      "https://qlab02.fiber.t-mobile.com/check-address"
+    );
+  }
 
-  await page.getByRole("combobox").click();
+  async enterAddress(address) {
+    await this.page.locator(
+      CheckAddressLocators.addressInput
+    ).fill(address);
+  }
 
-  await page.getByRole("option").first().click();
+  async selectUnit(index) {
+    await this.page.locator(
+      CheckAddressLocators.unitDropdown
+    ).click();
 
-  await page.getByTesId("fca-btn").click();
+    await this.page
+      .locator(CheckAddressLocators.options)
+      .nth(index)
+      .click();
+  }
+
+  async clickNext() {
+    await this.page.locator(
+      CheckAddressLocators.nextButton
+    ).click();
+  }
+
+  async checkAddress(address) {
+    await this.enterAddress(address);
+    await this.selectUnit(3);
+    await this.clickNext();
+  }
 }
