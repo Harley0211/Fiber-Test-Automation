@@ -1,6 +1,7 @@
 export const CheckAddressLocators = {
-  addressInput: '[data-testid="address"]',
-  unitDropdown: '[data-testid="fca-unit"]',
-  nextButton: '[data-testid="fca-btn"]',
-  options: '[role="option"]'
+  addressInput: '#address',
+  addressSuggestions: '#address-dropdown-suggestions-list',
+  eligible_greencheck: '[data-testid="ffii-wrapper"]',
+  unitDropdown: '#fca-unit-list-box',
+
 };

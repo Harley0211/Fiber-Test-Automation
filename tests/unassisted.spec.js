@@ -8,8 +8,13 @@ test("Unassisted Prospect Flow", async ({ page }) => {
 
   await checkAddress.navigate();
 
-  await checkAddress.checkAddress(
-    addresses.eligible
+  await checkAddress.enterAddress(
+    addresses.pilot_eligible
   );
+  
+  await checkAddress.suggestion();
+  await checkAddress.verifygreencheckmark();
+
+  await checkAddress.selectUnit("1D");
 
 });

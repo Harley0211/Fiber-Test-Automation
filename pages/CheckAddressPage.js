@@ -1,3 +1,4 @@
+import { expect } from "@playwright/test";
 import { CheckAddressLocators } from "../locators/checkAddress.locators";
 
 export class CheckAddressPage {
@@ -17,26 +18,28 @@ export class CheckAddressPage {
     ).fill(address);
   }
 
-  async selectUnit(index) {
+  async suggestion(){
     await this.page.locator(
-      CheckAddressLocators.unitDropdown
-    ).click();
-
-    await this.page
-      .locator(CheckAddressLocators.options)
-      .nth(index)
-      .click();
+      CheckAddressLocators.addressSuggestions
+    ).first().click();
   }
 
-  async clickNext() {
-    await this.page.locator(
-      CheckAddressLocators.nextButton
-    ).click();
+  async verifygreencheckmark(){
+    await expect(
+      this.page.locator(CheckAddressLocators.eligible_greencheck)
+    ).toBeVisible();
+    
   }
 
-  async checkAddress(address) {
-    await this.enterAddress(address);
-    await this.selectUnit(3);
-    await this.clickNext();
+  async selectUnit (unit){
+    await this.page.locator(CheckAddressLocators.unitDropdown).click();
+    await this.page.getByRole('option', {name: unit}).click();
+
   }
+
+
+
+
+
+  
 }
