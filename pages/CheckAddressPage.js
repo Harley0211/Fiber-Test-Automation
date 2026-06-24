@@ -32,9 +32,19 @@ export class CheckAddressPage {
   }
 
   async selectUnit (unit){
-    await this.page.locator(CheckAddressLocators.unitDropdown).click();
-    await this.page.getByRole('option', {name: unit}).click();
+    await this.page
+      .locator(CheckAddressLocators.unitDropdown)
+      .waitFor({state : "visible"});
+    
+    await this.page.locator(CheckAddressLocators.unitDropdown)
+      .click();
+    await this.page.getByRole('option', {name: unit})
+      .click();
 
+  }
+
+  async btnnext(){
+    await this.page.locator(CheckAddressLocators.btn_next).click();
   }
 
 
