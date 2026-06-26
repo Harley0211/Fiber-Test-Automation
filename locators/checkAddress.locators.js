@@ -4,5 +4,6 @@ export const CheckAddressLocators = {
   eligible_greencheck: '[data-testid="ffii-wrapper"]',
   unitDropdown: '#fca-unit',
   btn_next: '[data-testid = "fca-btn"]'
+  
 
 };
