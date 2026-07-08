@@ -15,12 +15,15 @@ export class OfferingPage {
     async closeVoipModal() {
     await this.page
         .getByTestId("modal-close-icon")
-        .filter({ visible: true })
         .click();
-    }
+
+}
 
     async selectAPlan(index){
-        await this.page.locator(OfferingLocators.selectPlanBtn).nth(index).click();
+        await this.page
+        .locator(`#choose_plan_${index}`)
+        .getByTestId("offer-card-button")
+        .click(); 
     }
 
 

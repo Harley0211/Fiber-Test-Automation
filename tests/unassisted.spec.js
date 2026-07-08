@@ -9,6 +9,7 @@ test("Unassisted Prospect Flow", async ({ page }) => {
   const offeringPage = new OfferingPage(page);
 
   const selectedPlan = 0;
+  
 
 
   await checkAddress.navigate();
@@ -39,11 +40,12 @@ test("Unassisted Prospect Flow", async ({ page }) => {
 
   await offeringPage.selectAPlan(selectedPlan);
 
-if (selectedPlan === 0) {
-    console.log("Plan 1GB selected");
-} else if (selectedPlan === 1) {
-    console.log("Plan 300 Mbps selected");
-}
+const plans = [
+    "Fiber 1 Gig",
+    "Fiber 300"
+];
+
+console.log(`${plans[selectedPlan]} selected`);
 
 
 });
