@@ -11,12 +11,17 @@ export class OfferingPage {
         console.log(await modal.count());
         await expect(modal).toBeVisible();
     }   
-
+    
     async closeVoipModal() {
-    await this.page
-        .getByTestId("modal-close-icon")
-        .click();
+        await this.page.locator(OfferingLocators.modalClose).click();
+    }
+
+    async selectFiber1GigPlan() {
+        const fiber1GigCard = this.page.locator(OfferingLocators.fiber1GigCard);
+        await expect(fiber1GigCard).toBeVisible();
+        await fiber1GigCard.getByTestId("offer-card-button").click();
+    }
+
 
 }
 
-}

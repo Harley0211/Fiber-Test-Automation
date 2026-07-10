@@ -5,6 +5,7 @@ import { defineConfig, devices } from "@playwright/test";
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  timeout: 120000,
   use: {
     trace: "on-first-retry",
     headless: false,

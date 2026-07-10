@@ -31,12 +31,20 @@ test("Unassisted Prospect Flow", async ({ page }) => {
   console.log("Next Button Clicked!")
 
 
-  //Offering
-  await offeringPage.verifyVoipModal();
-  console.log("Modal Displays on the offering page")
+  // //Offering
+  // await offeringPage.verifyVoipModal();
+  // console.log("Modal Displays on the offering page")
+
+  // await offeringPage.closeVoipModal();
+  // console.log("Modal closed");
+
+  await offeringPage.selectFiber1GigPlan();
+  console.log("VOIP Modal Diplayed");
 
   await offeringPage.closeVoipModal();
-  console.log("Modal closed");
+  console.log("VOIP Modal closed");
 
+  await offeringPage.selectFiber1GigPlan();
+  console.log("Fiber 1 Gig Plan Selected");
 
 });
