@@ -38,14 +38,5 @@ test("Unassisted Prospect Flow", async ({ page }) => {
   await offeringPage.closeVoipModal();
   console.log("Modal closed");
 
-  await offeringPage.selectAPlan(selectedPlan);
-
-const plans = [
-    "Fiber 1 Gig",
-    "Fiber 300"
-];
-
-console.log(`${plans[selectedPlan]} selected`);
-
 
 });

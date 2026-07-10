@@ -19,13 +19,4 @@ export class OfferingPage {
 
 }
 
-    async selectAPlan(index){
-        await this.page
-        .locator(`#choose_plan_${index}`)
-        .getByTestId("offer-card-button")
-        .click(); 
-    }
-
-
-
 }
