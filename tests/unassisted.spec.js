@@ -1,12 +1,14 @@
 import { test } from "@playwright/test";
 import { CheckAddressPage } from "../pages/CheckAddressPage";
 import { OfferingPage} from "../pages/OfferingPage";
+import { GetStartedPage } from "../pages/GetStartedPage";
 import { addresses } from "../test-data/addresses";
 
 test("Unassisted Prospect Flow", async ({ page }) => {
 
   const checkAddress = new CheckAddressPage(page);
   const offeringPage = new OfferingPage(page);
+  const getStartedPage = new GetStartedPage(page);
 
   const selectedPlan = 0;
   
@@ -47,5 +49,8 @@ test("Unassisted Prospect Flow", async ({ page }) => {
 
   await offeringPage.selectFiber1GigPlan();
   console.log("Fiber 1 Gig Plan Selected");
+
+  await getStartedPage.verifyPersonalInfoDisplayed();
+  console.log("Personal Info Displayed on the Get Started Page");
 
 });
