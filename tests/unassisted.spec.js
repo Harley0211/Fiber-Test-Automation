@@ -38,11 +38,12 @@ test("Unassisted Prospect Flow", async ({ page }) => {
   // await offeringPage.closeVoipModal();
   // console.log("Modal closed");
 
-  await offeringPage.selectFiber1GigPlan();
-  console.log("VOIP Modal Diplayed");
+  //website was updated and the modal is no longer displayed on the offering page. The following code is commented out to avoid test failure.
+  // await offeringPage.selectFiber1GigPlan();
+  // console.log("VOIP Modal Diplayed");
 
-  await offeringPage.closeVoipModal();
-  console.log("VOIP Modal closed");
+  // await offeringPage.closeVoipModal();
+  // console.log("VOIP Modal closed");
 
   await offeringPage.selectFiber1GigPlan();
   console.log("Fiber 1 Gig Plan Selected");

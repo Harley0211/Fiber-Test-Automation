@@ -6,15 +6,17 @@ export class OfferingPage {
         this.page=page;
     }
 
-    async verifyVoipModal() {
-        const modal = this.page.locator(OfferingLocators.VoipModal);
-        console.log(await modal.count());
-        await expect(modal).toBeVisible();
-    }   
+    //website was updated and the modal is no longer displayed on the offering page. The following code is commented out to avoid test failure.
+
+    // async verifyVoipModal() {
+    //     const modal = this.page.locator(OfferingLocators.VoipModal);
+    //     console.log(await modal.count());
+    //     await expect(modal).toBeVisible();
+    // }   
     
-    async closeVoipModal() {
-        await this.page.locator(OfferingLocators.modalClose).click();
-    }
+    // async closeVoipModal() {
+    //     await this.page.locator(OfferingLocators.modalClose).click();
+    // }
 
     async selectFiber1GigPlan() {
         const fiber1GigCard = this.page.locator(OfferingLocators.fiber1GigCard);
