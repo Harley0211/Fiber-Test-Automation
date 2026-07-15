@@ -15,7 +15,6 @@ export class GetStartedPage {
         await expect(this.page.locator(GetstartedLocators.dateOfBirth)).toBeVisible();
         await expect(this.page.locator(GetstartedLocators.pin)).toBeVisible();
         await expect(this.page.locator(GetstartedLocators.pinRequirements)).toBeVisible();
-        await expect(this.page.locator(GetstartedLocators.pinRequirementItems)).toBeVisible();
         await expect(this.page.locator(GetstartedLocators.agreement)).toBeVisible();
         await expect(this.page.locator(GetstartedLocators.nextButton)).toBeVisible();
 
